@@ -4,144 +4,187 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Voltaire: Vida, Obra y Pensamiento</title>
+    <link href="https://fonts.googleapis.com/css2?family=Merriweather:wght@400;700&family=Open+Sans:wght@300;400;600;700&display=swap" rel="stylesheet">
     <style>
-        @import url('https://fonts.googleapis.com/css2?family=Playfair+Display:wght@700&family=Roboto:wght@300;400;700&display=swap');
+        :root {
+            --primary-color: #2c3e50; /* Dark blue/grey for headers, footers */
+            --secondary-color: #3498db; /* Blue for accents, links */
+            --background-light: #fdfdfd; /* Light background for content */
+            --background-grey: #ecf0f1; /* Slightly darker background for sections */
+            --text-color: #333; /* Dark text */
+            --quote-background: #eaf2f8; /* Light blue for blockquotes */
+            --border-color: #ddd; /* Light grey for borders */
+        }
 
         body {
-            font-family: 'Roboto', sans-serif;
+            font-family: 'Open Sans', sans-serif;
             line-height: 1.6;
             margin: 0;
             padding: 0;
-            background-color: #f4f4f4;
-            color: #333;
+            background-color: var(--background-light);
+            color: var(--text-color);
+            scroll-behavior: smooth;
         }
+
         header {
-            background: linear-gradient(rgba(0,0,0,0.6), rgba(0,0,0,0.6)), url('https://upload.wikimedia.org/wikipedia/commons/thumb/e/e0/Portrait_of_Voltaire_by_Maurice_Quentin_de_La_Tour.jpg/1200px-Portrait_of_Voltaire_by_Maurice_Quentin_de_La_Tour.jpg') no-repeat center center/cover;
+            background-color: var(--primary-color);
             color: white;
-            padding: 100px 20px;
+            padding: 80px 20px;
             text-align: center;
-            position: relative;
             box-shadow: 0 4px 8px rgba(0, 0, 0, 0.2);
+            position: relative;
         }
+
         header h1 {
-            font-family: 'Playfair Display', serif;
-            font-size: 3.5em;
+            font-family: 'Merriweather', serif;
+            font-size: 3.8em;
             margin-bottom: 10px;
-            text-shadow: 2px 2px 4px rgba(0, 0, 0, 0.7);
+            text-shadow: 2px 2px 4px rgba(0, 0, 0, 0.5);
+            letter-spacing: 1px;
         }
+
         header p {
-            font-size: 1.2em;
+            font-size: 1.3em;
             max-width: 800px;
             margin: 0 auto;
-            text-shadow: 1px 1px 3px rgba(0, 0, 0, 0.7);
+            text-shadow: 1px 1px 3px rgba(0, 0, 0, 0.5);
+            font-style: italic;
         }
+
         .container {
-            max-width: 1000px;
-            margin: 30px auto;
-            padding: 20px;
+            max-width: 960px;
+            margin: 40px auto;
+            padding: 30px;
             background: white;
-            box-shadow: 0 0 15px rgba(0, 0, 0, 0.1);
-            border-radius: 8px;
+            box-shadow: 0 0 20px rgba(0, 0, 0, 0.1);
+            border-radius: 10px;
         }
+
+        section {
+            margin-bottom: 40px;
+            padding-bottom: 20px;
+            border-bottom: 1px solid var(--border-color);
+        }
+
+        section:last-of-type {
+            border-bottom: none;
+            margin-bottom: 0;
+            padding-bottom: 0;
+        }
+
         h2 {
-            font-family: 'Playfair Display', serif;
-            color: #2c3e50;
-            border-bottom: 2px solid #3498db;
-            padding-bottom: 10px;
-            margin-top: 40px;
-            font-size: 2em;
-        }
-        h3 {
-            color: #34495e;
-            margin-top: 25px;
-            font-size: 1.5em;
-        }
-        .section-content {
-            display: flex;
-            flex-wrap: wrap;
-            align-items: flex-start;
-            gap: 20px;
-            margin-bottom: 20px;
-        }
-        .section-content .text-column {
-            flex: 2;
-            min-width: 300px;
-        }
-        .section-content .image-column {
-            flex: 1;
-            min-width: 200px;
+            font-family: 'Merriweather', serif;
+            color: var(--primary-color);
+            font-size: 2.5em;
+            padding-bottom: 15px;
+            margin-top: 0;
+            margin-bottom: 25px;
+            position: relative;
             text-align: center;
         }
-        .section-content img {
-            max-width: 100%;
-            height: auto;
-            border-radius: 8px;
-            box-shadow: 0 4px 8px rgba(0, 0, 0, 0.15);
-            margin-bottom: 10px;
+
+        h2::after {
+            content: '';
+            display: block;
+            width: 80px;
+            height: 4px;
+            background-color: var(--secondary-color);
+            margin: 10px auto 0;
+            border-radius: 2px;
         }
-        .image-caption {
-            font-size: 0.9em;
-            color: #666;
-            margin-top: 5px;
+
+        h3 {
+            font-family: 'Merriweather', serif;
+            color: var(--secondary-color);
+            margin-top: 35px;
+            margin-bottom: 15px;
+            font-size: 1.8em;
+            border-left: 5px solid var(--secondary-color);
+            padding-left: 15px;
+            line-height: 1.2;
         }
+
+        p {
+            margin-bottom: 1em;
+            text-align: justify;
+        }
+
         blockquote {
-            background-color: #eaf2f8;
-            border-left: 5px solid #3498db;
-            margin: 20px 0;
-            padding: 15px 20px;
+            background-color: var(--quote-background);
+            border-left: 6px solid var(--secondary-color);
+            margin: 30px 0;
+            padding: 20px 25px;
             font-style: italic;
             color: #555;
             position: relative;
-            border-radius: 4px;
+            border-radius: 5px;
+            box-shadow: 0 2px 5px rgba(0, 0, 0, 0.08);
         }
+
         blockquote p {
-            margin: 0;
+            margin: 0 0 10px 0;
+            font-size: 1.1em;
+            line-height: 1.7;
+            text-align: left; /* Keep quotes left-aligned */
         }
+
         blockquote cite {
             display: block;
-            margin-top: 10px;
+            margin-top: 15px;
             text-align: right;
-            font-size: 0.9em;
+            font-size: 0.95em;
             color: #777;
         }
+
         ul {
             list-style: none;
             padding: 0;
+            margin-left: 20px;
         }
+
         ul li {
-            margin-bottom: 10px;
-            padding-left: 25px;
+            margin-bottom: 12px;
+            padding-left: 10px;
             position: relative;
         }
+
         ul li::before {
-            content: '•';
-            color: #3498db;
+            content: '»'; /* A visual bullet */
+            color: var(--secondary-color);
             position: absolute;
-            left: 0;
+            left: -10px;
             font-size: 1.2em;
             line-height: 1.6;
+            font-weight: bold;
         }
+
         a {
-            color: #3498db;
+            color: var(--secondary-color);
             text-decoration: none;
+            transition: color 0.3s ease;
         }
+
         a:hover {
+            color: var(--primary-color);
             text-decoration: underline;
         }
-        .links-list {
-            margin-top: 15px;
-        }
+
         .links-list li {
             margin-bottom: 8px;
+            padding-left: 0;
         }
+        .links-list li::before {
+            content: ''; /* Remove default bullet for link lists */
+        }
+
         footer {
             text-align: center;
-            padding: 20px;
-            margin-top: 40px;
-            background-color: #2c3e50;
+            padding: 25px;
+            margin-top: 50px;
+            background-color: var(--primary-color);
             color: white;
             font-size: 0.9em;
-            border-top: 5px solid #3498db;
+            border-top: 5px solid var(--secondary-color);
         }
 
         /* Responsive adjustments */
@@ -150,19 +193,38 @@
                 padding: 60px 15px;
             }
             header h1 {
-                font-size: 2.5em;
+                font-size: 2.8em;
+            }
+            header p {
+                font-size: 1em;
             }
             .container {
                 margin: 20px 15px;
-                padding: 15px;
+                padding: 20px;
             }
-            .section-content {
-                flex-direction: column;
+            h2 {
+                font-size: 2em;
             }
-            .section-content .text-column,
-            .section-content .image-column {
-                min-width: unset;
-                width: 100%;
+            h3 {
+                font-size: 1.6em;
+            }
+            blockquote {
+                padding: 15px 20px;
+            }
+            blockquote p {
+                font-size: 1em;
+            }
+        }
+
+        @media (max-width: 480px) {
+            header h1 {
+                font-size: 2.2em;
+            }
+            h2 {
+                font-size: 1.8em;
+            }
+            h3 {
+                font-size: 1.4em;
             }
         }
     </style>
@@ -171,194 +233,130 @@
 
     <header>
         <h1>Voltaire</h1>
-        <p>"No estoy de acuerdo con lo que dices, pero defenderé hasta la muerte tu derecho a decirlo."</p>
+        <p>"El sentido común no es tan común."</p>
     </header>
 
     <div class="container">
 
         <section id="vida">
             <h2>Vida</h2>
-            <div class="section-content">
-                <div class="text-column">
-                    <p>François-Marie Arouet, más conocido por su seudónimo Voltaire, nació en París el 21 de noviembre de 1694. Hijo de un notario adinerado, recibió una excelente educación en el colegio jesuita Louis-le-Grand, donde mostró una precoz inteligencia y un espíritu crítico.</p>
-                    <p>Desde joven, se dedicó a la literatura, destacando por su ingenio y sátira, lo que le valió tanto reconocimiento como problemas con las autoridades. Fue encarcelado en la Bastilla en dos ocasiones debido a sus escritos provocadores. Durante su segundo encarcelamiento (1717-1718), adoptó el nombre de Voltaire.</p>
-                    <p>Tras un conflicto con un noble, el Chevalier de Rohan, que lo llevó a una nueva estancia en la Bastilla y posteriormente a un exilio en Inglaterra (1726-1729), Voltaire se empapó de las ideas de John Locke y Isaac Newton. Esta experiencia fue crucial para el desarrollo de su pensamiento ilustrado, profundamente influenciado por el empirismo y el liberalismo inglés.</p>
-                    <p>A su regreso a Francia, publicó sus "Cartas Filosóficas" (también conocidas como "Cartas Inglesas"), una obra que comparaba la sociedad y el gobierno inglés con los franceses, criticando abiertamente el absolutismo y la intolerancia religiosa de su país. Esta obra fue censurada y quemada públicamente, obligando a Voltaire a huir de París y establecerse en Cirey, en la corte de la marquesa de Châtelet, con quien mantuvo una relación intelectual y personal durante quince años.</p>
-                    <p>Los últimos años de su vida los pasó en Ferney, cerca de la frontera suiza, desde donde continuó su incansable lucha por la justicia, la tolerancia y la libertad. Mantuvo una vasta correspondencia con los principales pensadores de su época y se convirtió en una figura central de la Ilustración europea. Murió en París el 30 de mayo de 1778, aclamado por el pueblo pero aún bajo la sospecha de la Iglesia y el Estado.</p>
-                </div>
-                <div class="image-column">
-                    <img src="https://upload.wikimedia.org/wikipedia/commons/thumb/e/e0/Portrait_of_Voltaire_by_Maurice_Quentin_de_La_Tour.jpg/800px-Portrait_of_Voltaire_by_Maurice_Quentin_de_La_Tour.jpg" alt="Retrato de Voltaire por Maurice Quentin de La Tour">
-                    <p class="image-caption">Retrato de Voltaire por Maurice Quentin de La Tour (c. 1750).</p>
-                    <img src="https://upload.wikimedia.org/wikipedia/commons/thumb/a/a2/Voltaire_at_the_Age_of_24.jpg/400px-Voltaire_at_the_Age_of_24.jpg" alt="Voltaire joven">
-                    <p class="image-caption">Voltaire a los 24 años.</p>
-                </div>
-            </div>
+            <p>François-Marie Arouet, conocido universalmente como Voltaire, nació en París el 21 de noviembre de 1694. Desde joven, su ingenio y su espíritu incisivo lo destacaron, aunque también le valieron conflictos tempranos con las autoridades y la aristocracia, lo que resultó en dos estancias en la célebre prisión de la Bastilla.</p>
+            <p>Fue durante su segundo encarcelamiento, entre 1717 y 1718, que adoptó el seudónimo de Voltaire, un anagrama de Arouet Le Jeune (Arouet el Joven). Su exilio en Inglaterra (1726-1729) fue un punto de inflexión. Allí se empapó de las ideas liberales de John Locke y de la ciencia de Isaac Newton, elementos que moldearían profundamente su pensamiento y obra.</p>
+            <p>Al regresar a Francia, publicó las "Cartas Filosóficas" (1734), una obra que, al comparar la sociedad y el gobierno inglés con los franceses, criticaba veladamente el absolutismo y la intolerancia religiosa de su patria. La obra fue condenada y quemada, forzando a Voltaire a huir de París. Se estableció en Cirey, en la región de Champaña, donde vivió durante más de una década con la erudita Marquesa de Châtelet, un periodo de intensa producción intelectual.</p>
+            <p>Los últimos veinte años de su vida los pasó en Ferney, cerca de la frontera suiza, desde donde continuó su incansable lucha por la justicia y la razón. Se convirtió en un símbolo de la Ilustración, correspondiéndose con monarcas y pensadores de toda Europa y utilizando su pluma para denunciar abusos, defender la libertad y promover la tolerancia. Murió en París en 1778, a los 83 años, dejando un legado inmenso en la historia del pensamiento.</p>
         </section>
 
         <section id="contexto">
             <h2>Contexto Histórico y Filosófico</h2>
-            <p>Voltaire vivió en el corazón del siglo XVIII, una época conocida como la Ilustración o Siglo de las Luces. Este periodo se caracterizó por un énfasis en la razón, la ciencia y el progreso, y por una crítica profunda a las instituciones tradicionales, el absolutismo monárquico y la intolerancia religiosa.</p>
-            <p><strong>Contexto Histórico:</strong></p>
-            <ul>
-                <li><strong>Absolutismo en Francia:</strong> La monarquía francesa, bajo Luis XV y posteriormente Luis XVI, seguía un modelo absolutista que concentraba el poder en el rey, con una sociedad estamental dividida en nobleza, clero y Tercer Estado. Voltaire fue un crítico feroz de este sistema y sus abusos.</li>
-                <li><strong>Ascenso de la burguesía:</strong> Aunque carecía de poder político, la burguesía, a la que pertenecía Voltaire, ganaba poder económico e intelectual, deseando un cambio en la estructura social.</li>
-                <li><strong>Guerras y conflictos:</strong> Europa estaba inmersa en diversas guerras (Guerra de Sucesión Austríaca, Guerra de los Siete Años) que revelaban la inestabilidad política y el sufrimiento humano, temas que Voltaire a menudo abordó.</li>
-                <li><strong>Revolución Científica:</strong> El auge de la ciencia (Newton, la Royal Society) impulsó una visión del mundo basada en la observación y la razón, influyendo en la fe de los ilustrados en el progreso y la capacidad humana para entender el universo.</li>
-            </ul>
-            <p><strong>Contexto Filosófico:</strong></p>
-            <ul>
-                <li><strong>La Ilustración:</strong> Movimiento intelectual que promovía la razón, la libertad de pensamiento y la tolerancia. Otros grandes pensadores de esta época fueron Montesquieu (división de poderes), Rousseau (contrato social) y Diderot (la Enciclopedia).</li>
-                <li><strong>Empirismo Inglés:</strong> Las ideas de John Locke (conocimiento a través de la experiencia, derechos naturales) y David Hume (escepticismo) tuvieron un impacto significativo en Voltaire, especialmente su crítica a la metafísica abstracta y su defensa de la razón práctica.</li>
-                <li><strong>Deísmo:</strong> Muchos ilustrados, incluyendo a Voltaire, adoptaron el deísmo, una creencia en un Dios creador que no interviene en los asuntos del mundo. Esto contrastaba con el dogma de la Iglesia y promovía una religión más racional y tolerante.</li>
-                <li><strong>Crítica al fanatismo religioso:</strong> La Inquisición y los conflictos religiosos del pasado (como las Guerras de Religión en Francia) alimentaron la postura antirreligiosa y antitransigente de Voltaire, que abogaba por la separación de la Iglesia y el Estado.</li>
-            </ul>
+            <p>Voltaire fue una figura central del siglo XVIII, la era de la Ilustración. Esta época se caracterizó por la fe en la razón, la crítica a las estructuras obsoletas y la búsqueda del conocimiento para el progreso humano.</p>
+            <h3>El Absolutismo y la Sociedad Estamental</h3>
+            <p>En Francia, la monarquía borbónica mantenía un férreo absolutismo bajo Luis XV y Luis XVI, con una sociedad rígidamente dividida en estamentos (nobleza, clero y el vasto Tercer Estado). Voltaire, burgués de origen, fue un agudo crítico de los privilegios y las injusticias de este sistema.</p>
+            <h3>La Revolución Científica y el Empirismo</h3>
+            <p>El siglo anterior había sido testigo de la Revolución Científica (Galileo, Newton), que transformó la comprensión del universo. Estas ideas, junto con el empirismo filosófico de pensadores como John Locke, que postulaba que el conocimiento proviene de la experiencia, influyeron en Voltaire. Su visita a Inglaterra le expuso directamente a un sistema político más liberal y a las ideas de Locke, que defendía la libertad individual y un gobierno limitado.</p>
+            <h3>La Ilustración: Razón y Tolerancia</h3>
+            <p>Voltaire compartió con otros ilustrados (Montesquieu, Rousseau, Diderot) la convicción de que la razón era la herramienta fundamental para combatir la ignorancia, la superstición y la tiranía. Su cruzada por la tolerancia religiosa, plasmada en su "Tratado sobre la Tolerancia", fue una respuesta directa a los fanatismos y persecuciones religiosas del pasado y presente, como el caso Calas.</p>
+            <p>Muchos ilustrados, incluido Voltaire, adoptaron el deísmo: la creencia en un Dios creador del universo que, una vez puesto en marcha, no interviene en sus leyes naturales. Esta postura contrastaba con la doctrina de la Iglesia y promovía una moralidad basada en la razón y la humanidad, más que en el dogma revelado.</p>
         </section>
 
         <section id="pensamiento">
             <h2>Pensamiento</h2>
-            <div class="section-content">
-                <div class="text-column">
-                    <p>El pensamiento de Voltaire se caracteriza por su pragmatismo, su defensa de la razón crítica y su incansable lucha contra la injusticia, la intolerancia y el fanatismo. No desarrolló un sistema filosófico coherente como otros pensadores, sino que sus ideas se manifestaron a través de ensayos, cartas, obras de teatro y panfletos, siempre al servicio de sus ideales.</p>
+            <p>El pensamiento de Voltaire, aunque no sistemático, es un faro de la Ilustración, caracterizado por su pragmatismo, su espíritu crítico y su defensa inquebrantable de la razón y la libertad. Sus ideas se manifestaron a través de una vasta producción literaria.</p>
 
-                    <h3>Libertad de Pensamiento y Expresión</h3>
-                    <p>Uno de sus pilares fue la defensa de la libertad individual, especialmente la de pensamiento y expresión. Creía firmemente que la libertad de expresión era esencial para el progreso de la sociedad.</p>
-                    <blockquote>
-                        <p>"No estoy de acuerdo con lo que dices, pero defenderé hasta la muerte tu derecho a decirlo."</p>
-                        <cite>Atribuida a Voltaire (formulada por Evelyn Beatrice Hall)</cite>
-                    </blockquote>
+            <h3>Libertad de Pensamiento y Expresión</h3>
+            <p>Voltaire fue el paladín de la libertad individual, especialmente la de pensamiento y expresión. Creía que el diálogo abierto y la crítica eran esenciales para el progreso de la sociedad, incluso cuando no se estaba de acuerdo con lo que se decía.</p>
+            <blockquote>
+                <p>"No estoy de acuerdo con lo que dices, pero defenderé hasta la muerte tu derecho a decirlo."</p>
+                <cite>Atribuida a Voltaire (formulada por Evelyn Beatrice Hall, resumiendo su espíritu)</cite>
+            </blockquote>
 
-                    <h3>Tolerancia y Antifanatisimo</h3>
-                    <p>Voltaire fue un acérrimo defensor de la tolerancia religiosa y un crítico implacable del fanatismo, la superstición y la intransigencia eclesiástica. Condenó la persecución religiosa y abogó por una sociedad donde todas las creencias pudieran coexistir pacíficamente.</p>
-                    <blockquote>
-                        <p>"El fanatismo es a la superstición lo que el delirio es a la fiebre, lo que la rabia es a la cólera. Quien tiene éxtasis y visiones, quien toma sus sueños por realidades y sus imaginaciones por profecías, es un entusiasta; quien sostiene su locura por la fuerza y el homicidio es un fanático."</p>
-                        <cite>Tratado sobre la Tolerancia</cite>
-                    </blockquote>
+            <h3>Tolerancia Religiosa y Antifanatisimo</h3>
+            <p>Su lucha más famosa fue contra el fanatismo y la intolerancia religiosa. Para Voltaire, la superstición y el dogma eclesiástico eran las fuentes de la mayor parte de la crueldad humana. Abogó por una sociedad laica donde las diversas creencias pudieran coexistir en paz.</p>
+            <blockquote>
+                <p>"El fanatismo es a la superstición lo que el delirio es a la fiebre, lo que la rabia es a la cólera. Quien tiene éxtasis y visiones, quien toma sus sueños por realidades y sus imaginaciones por profecías, es un entusiasta; quien sostiene su locura por la fuerza y el homicidio es un fanático."</p>
+                <cite>Tratado sobre la Tolerancia</cite>
+            </blockquote>
 
-                    <h3>Deísmo y Razón</h3>
-                    <p>Aunque crítico con la Iglesia Católica y sus dogmas, Voltaire no fue ateo. Abrazó el deísmo, creyendo en un Dios creador del universo que opera a través de leyes naturales, sin intervenir en los asuntos humanos. Para él, la razón era la luz que debía guiar al hombre, liberándolo de la ignorancia y la superstición.</p>
-                    <blockquote>
-                        <p>"Si Dios no existiera, habría que inventarlo."</p>
-                        <cite>Epístola a los autores del libro sobre el Espíritu</cite>
-                    </blockquote>
+            <h3>Deísmo y Razón Práctica</h3>
+            <p>Aunque fuertemente crítico con la Iglesia, Voltaire no era ateo. Era un deísta convencido, creyendo en un Dios relojero que creó un universo regido por leyes racionales, sin necesidad de intervención divina constante o dogmas complejos. La razón era para él la guía para una vida moral y justa.</p>
+            <blockquote>
+                <p>"Si Dios no existiera, habría que inventarlo."</p>
+                <cite>Epístola a los autores del libro sobre el Espíritu</cite>
+            </blockquote>
 
-                    <h3>Justicia Social y Reforma Legal</h3>
-                    <p>Voltaire se involucró activamente en casos de injusticia, como el caso Calas o el caso Sirven, luchando por la revisión de sentencias y la abolición de la tortura y la pena de muerte. Abogaba por una justicia basada en la razón y la equidad, no en el capricho o el dogma.</p>
-                    <blockquote>
-                        <p>"Hay que cultivar nuestro jardín."</p>
-                        <cite>Cándido</cite>
-                        <p>Esta frase, del final de su obra más famosa, se interpreta a menudo como una llamada a la acción práctica, a mejorar el mundo a nuestro alrededor en lugar de especular sobre grandes sistemas filosóficos o teológicos.</p>
-                    </blockquote>
-
-                    <h3>Crítica al Optimismo Metafísico</h3>
-                    <p>En "Cándido o el optimismo", Voltaire satiriza la filosofía optimista de Leibniz, que sostenía que este es "el mejor de los mundos posibles". A través de las desventuras de Cándido, Voltaire expone la brutalidad, la injusticia y el sufrimiento del mundo, cuestionando la idea de una providencia siempre benevolente.</p>
-                </div>
-                <div class="image-column">
-                    <img src="https://upload.wikimedia.org/wikipedia/commons/thumb/b/b5/Voltaire_philosopher.jpg/800px-Voltaire_philosopher.jpg" alt="Estatua de Voltaire">
-                    <p class="image-caption">Estatua de Voltaire en la Comédie-Française, París.</p>
-                    <img src="https://upload.wikimedia.org/wikipedia/commons/thumb/c/cd/Voltaire_at_Ferney_%281775%29_by_Jean_Huber.jpg/800px-Voltaire_at_Ferney_%281775%29_by_Jean_Huber.jpg" alt="Voltaire en Ferney">
-                    <p class="image-caption">Voltaire en Ferney, por Jean Huber (1775).</p>
-                </div>
-            </div>
+            <h3>Crítica al Optimismo Metafísico</h3>
+            <p>En su obra maestra "Cándido o el optimismo", Voltaire satiriza la filosofía optimista de Leibniz, que sostenía que este es "el mejor de los mundos posibles". A través de las rocambolescas y a menudo brutales aventuras de Cándido, Voltaire expone la omnipresencia del mal y el sufrimiento en el mundo, cuestionando la idea de una providencia siempre benevolente y abogando por un enfoque más práctico y menos abstracto de la vida.</p>
+            <blockquote>
+                <p>"Hay que cultivar nuestro jardín."</p>
+                <cite>Cándido</cite>
+                <p>Esta frase, que cierra la obra, se interpreta como una llamada a la acción constructiva y al mejoramiento de nuestro entorno inmediato, en lugar de perderse en especulaciones metafísicas estériles o esperar una perfección irreal.</p>
+            </blockquote>
         </section>
 
         <section id="influencias">
             <h2>Influencias Recibidas y Ejercidas</h2>
-            <div class="section-content">
-                <div class="text-column">
-                    <h3>Influencias Recibidas:</h3>
-                    <ul>
-                        <li><strong>John Locke (1632-1704):</strong> Su teoría del conocimiento empírico ("Ensayo sobre el entendimiento humano") y sus ideas políticas sobre los derechos naturales y el gobierno limitado (explicadas en "Dos tratados sobre el gobierno civil") fueron fundamentales para Voltaire durante su exilio en Inglaterra.</li>
-                        <li><strong>Isaac Newton (1642-1727):</strong> La física newtoniana y su método científico, basado en la observación y la razón, impresionaron profundamente a Voltaire y reforzaron su visión de un universo ordenado por leyes naturales.</li>
-                        <li><strong>Pierre Bayle (1647-1706):</strong> Su "Diccionario histórico y crítico" (1697) fue una fuente de inspiración por su escepticismo religioso y su defensa de la tolerancia.</li>
-                        <li><strong>François Rabelais (c. 1494-1553):</strong> La sátira y el humor irreverente de Rabelais en obras como "Gargantúa y Pantagruel" pueden verse reflejados en el estilo mordaz de Voltaire.</li>
-                    </ul>
+            <h3>Influencias Recibidas:</h3>
+            <ul>
+                <li><strong>John Locke (1632-1704):</strong> Sus ideas sobre el empirismo, la experiencia como fuente de conocimiento, y sus teorías políticas sobre los derechos naturales y la limitación del poder monárquico, fueron fundamentales para Voltaire durante su exilio en Inglaterra.</li>
+                <li><strong>Isaac Newton (1642-1727):</strong> La visión de Newton de un universo regido por leyes físicas racionales y descubribles por la razón humana reforzó el deísmo de Voltaire y su fe en el poder de la ciencia.</li>
+                <li><strong>Pierre Bayle (1647-1706):</strong> El espíritu escéptico y la defensa de la tolerancia de Bayle, especialmente en su "Diccionario histórico y crítico", prefiguraron y nutrieron el pensamiento de Voltaire.</li>
+            </ul>
 
-                    <h3>Influencias Ejercidas:</h3>
-                    <ul>
-                        <li><strong>La Ilustración Europea:</strong> Voltaire fue una figura central y catalizadora de la Ilustración. Sus ideas sobre la razón, la tolerancia y la justicia se difundieron por toda Europa, influyendo en otros pensadores, monarcas ilustrados (como Federico II de Prusia y Catalina la Grande de Rusia) y en la opinión pública.</li>
-                        <li><strong>Revolución Francesa (1789):</strong> Aunque murió antes de la Revolución, sus ideas sentaron las bases ideológicas. La Declaración de los Derechos del Hombre y del Ciudadano (1789) refleja muchos de los principios que Voltaire defendió, como la libertad, la igualdad y la tolerancia.</li>
-                        <li><strong>Derechos Humanos Modernos:</strong> Su incansable lucha contra la tortura, la censura y la injusticia contribuyó al desarrollo de la noción de derechos humanos universales.</li>
-                        <li><strong>Periodismo y Opinión Pública:</strong> Su prolífica producción de panfletos y cartas al público ayudó a modelar el papel del intelectual en la esfera pública y la formación de una opinión pública crítica.</li>
-                        <li><strong>Literatura Francesa:</strong> Su estilo claro, conciso y a menudo irónico, así como su maestría en géneros como el cuento filosófico ("Cándido") y la tragedia, dejaron una huella duradera.</li>
-                    </ul>
-                </div>
-                <div class="image-column">
-                    <img src="https://upload.wikimedia.org/wikipedia/commons/thumb/d/d4/John_Locke.jpg/800px-John_Locke.jpg" alt="Retrato de John Locke">
-                    <p class="image-caption">John Locke, pensador clave para Voltaire.</p>
-                    <img src="https://upload.wikimedia.org/wikipedia/commons/thumb/8/83/Sir_Isaac_Newton_%281643-1727%29.jpg/800px-Sir_Isaac_Newton_%281643-1727%29.jpg" alt="Retrato de Isaac Newton">
-                    <p class="image-caption">Isaac Newton, cuya ciencia influyó a Voltaire.</p>
-                </div>
-            </div>
+            <h3>Influencias Ejercidas:</h3>
+            <ul>
+                <li><strong>La Ilustración Europea:</strong> Voltaire se erigió como uno de los líderes intelectuales de la Ilustración. Sus ideas sobre la razón, la libertad y la tolerancia se propagaron por toda Europa, influyendo en otros filósofos, en monarcas ilustrados como Federico II de Prusia y Catalina la Grande de Rusia, y en el desarrollo del pensamiento liberal.</li>
+                <li><strong>La Revolución Francesa (1789):</strong> Aunque murió antes de su estallido, sus críticas al absolutismo y a los privilegios, y su defensa de los derechos individuales, sentaron las bases ideológicas que inspiraron la Revolución. Muchos de sus principios se reflejan en la Declaración de los Derechos del Hombre y del Ciudadano.</li>
+                <li><strong>Derechos Humanos Modernos:</strong> Su incansable lucha contra la tortura, la censura y la injusticia judicial (como en el caso Calas) contribuyó significativamente al desarrollo y reconocimiento de los derechos humanos universales.</li>
+                <li><strong>La Formación de la Opinión Pública:</strong> A través de su prolífica correspondencia y sus panfletos, Voltaire moldeó la figura del intelectual comprometido y contribuyó a la emergencia de una esfera pública crítica e informada.</li>
+            </ul>
         </section>
 
         <section id="obras">
             <h2>Principales Obras</h2>
-            <p>Voltaire fue un autor prolífico que cultivó diversos géneros literarios, desde la poesía épica y la tragedia hasta el ensayo filosófico, la historia y la correspondencia. Aquí algunas de sus obras más destacadas:</p>
+            <p>Voltaire fue un autor extraordinariamente prolífico y versátil, destacando en géneros como el ensayo, la tragedia, la historia y el cuento filosófico.</p>
             <ul class="links-list">
-                <li><strong>Poesía:</strong>
+                <li><strong>Cartas Filosóficas (o Cartas Inglesas)</strong> (1734)
                     <ul>
-                        <li><a href="https://es.wikipedia.org/wiki/La_Henriada" target="_blank" rel="noopener noreferrer">La Henriada</a> (1723) - Un poema épico sobre Enrique IV de Francia.</li>
+                        <li><a href="https://archive.org/details/cartasfilosofica00volt" target="_blank" rel="noopener noreferrer">Archive.org (español)</a></li>
+                        <li><a href="https://www.amazon.es/Cartas-filos%C3%B3ficas-Voltaire/dp/8420674251" target="_blank" rel="noopener noreferrer">Amazon España</a></li>
                     </ul>
                 </li>
-                <li><strong>Tragedias:</strong>
+                <li><strong>Tratado sobre la Tolerancia</strong> (1763)
                     <ul>
-                        <li><a href="https://es.wikipedia.org/wiki/Zaire_(obra_de_teatro)" target="_blank" rel="noopener noreferrer">Zaire</a> (1732) - Una de sus tragedias más exitosas, con temas de amor y religión.</li>
-                        <li><a href="https://es.wikipedia.org/wiki/Mahomet" target="_blank" rel="noopener noreferrer">Mahomet</a> (1741) - Obra que criticaba el fanatismo religioso.</li>
+                        <li><a href="https://archive.org/details/tratadosobrelatolerancia00volt" target="_blank" rel="noopener noreferrer">Archive.org (español)</a></li>
+                        <li><a href="https://www.amazon.es/Tratado-sobre-tolerancia-Voltaire/dp/8437617477" target="_blank" rel="noopener noreferrer">Amazon España</a></li>
                     </ul>
                 </li>
-                <li><strong>Ensayos y Escritos Filosóficos:</strong>
+                <li><strong>Cándido o el Optimismo</strong> (1759)
                     <ul>
-                        <li><strong>Cartas Filosóficas (Cartas Inglesas)</strong> (1734)
-                            <ul>
-                                <li><a href="https://www.gutenberg.org/ebooks/39832" target="_blank" rel="noopener noreferrer">Project Gutenberg (inglés, hay versiones en español disponibles en otras plataformas)</a></li>
-                                <li><a href="https://archive.org/details/cartasfilosofica00volt" target="_blank" rel="noopener noreferrer">Archive.org (español)</a></li>
-                                <li><a href="https://www.amazon.es/Cartas-filos%C3%B3ficas-Voltaire/dp/8420674251" target="_blank" rel="noopener noreferrer">Amazon España</a></li>
-                            </ul>
-                        </li>
-                        <li><strong>Tratado sobre la Tolerancia</strong> (1763)
-                            <ul>
-                                <li><a href="https://www.gutenberg.org/ebooks/57186" target="_blank" rel="noopener noreferrer">Project Gutenberg (francés, buscar por "Traités sur la Tolérance")</a></li>
-                                <li><a href="https://archive.org/details/tratadosobrelatolerancia00volt" target="_blank" rel="noopener noreferrer">Archive.org (español)</a></li>
-                                <li><a href="https://www.amazon.es/Tratado-sobre-tolerancia-Voltaire/dp/8437617477" target="_blank" rel="noopener noreferrer">Amazon España</a></li>
-                            </ul>
-                        </li>
-                        <li><strong>Diccionario Filosófico</strong> (1764)
-                            <ul>
-                                <li><a href="https://www.gutenberg.org/ebooks/search/?query=Dictionnaire+philosophique+Voltaire&submit_search=Go%21" target="_blank" rel="noopener noreferrer">Project Gutenberg (francés, algunas entradas traducidas)</a></li>
-                                <li><a href="https://archive.org/details/diccionariofilos00volt" target="_blank" rel="noopener noreferrer">Archive.org (español)</a></li>
-                                <li><a href="https://www.amazon.es/Diccionario-filos%C3%B3fico-Voltaire/dp/8446022830" target="_blank" rel="noopener noreferrer">Amazon España</a></li>
-                            </ul>
-                        </li>
+                        <li><a href="https://www.gutenberg.org/ebooks/19942" target="_blank" rel="noopener noreferrer">Project Gutenberg (español)</a></li>
+                        <li><a href="https://archive.org/details/candidoeloptimis00volt" target="_blank" rel="noopener noreferrer">Archive.org (español)</a></li>
+                        <li><a href="https://www.amazon.es/C%C3%A1ndido-optimismo-Letras-Universales-Voltaire/dp/8437604595" target="_blank" rel="noopener noreferrer">Amazon España</a></li>
                     </ul>
                 </li>
-                <li><strong>Cuentos Filosóficos:</strong>
+                <li><strong>Diccionario Filosófico</strong> (1764)
                     <ul>
-                        <li><strong>Cándido o el Optimismo</strong> (1759)
-                            <ul>
-                                <li><a href="https://www.gutenberg.org/ebooks/19942" target="_blank" rel="noopener noreferrer">Project Gutenberg (español)</a></li>
-                                <li><a href="https://archive.org/details/candidoeloptimis00volt" target="_blank" rel="noopener noreferrer">Archive.org (español)</a></li>
-                                <li><a href="https://www.amazon.es/C%C3%A1ndido-optimismo-Letras-Universales-Voltaire/dp/8437604595" target="_blank" rel="noopener noreferrer">Amazon España</a></li>
-                            </ul>
-                        </li>
-                        <li><strong>Zadig o el Destino</strong> (1747)
-                            <ul>
-                                <li><a href="https://www.gutenberg.org/ebooks/19941" target="_blank" rel="noopener noreferrer">Project Gutenberg (español)</a></li>
-                                <li><a href="https://archive.org/details/zadigeldesitinof00volt" target="_blank" rel="noopener noreferrer">Archive.org (español)</a></li>
-                                <li><a href="https://www.amazon.es/Zadig-micromegas-Catedra-Letras-Universales/dp/8437609278" target="_blank" rel="noopener noreferrer">Amazon España</a></li>
-                            </ul>
-                        </li>
-                        <li><strong>Micromegas</strong> (1752)
-                            <ul>
-                                <li><a href="https://www.gutenberg.org/ebooks/19941" target="_blank" rel="noopener noreferrer">Project Gutenberg (español, junto con Zadig)</a></li>
-                                <li><a href="https://archive.org/details/zadigeldesitinof00volt" target="_blank" rel="noopener noreferrer">Archive.org (español, junto con Zadig)</a></li>
-                                <li><a href="https://www.amazon.es/Zadig-micromegas-Catedra-Letras-Universales/dp/8437609278" target="_blank" rel="noopener noreferrer">Amazon España</a></li>
-                            </ul>
-                        </li>
+                        <li><a href="https://archive.org/details/diccionariofilos00volt" target="_blank" rel="noopener noreferrer">Archive.org (español)</a></li>
+                        <li><a href="https://www.amazon.es/Diccionario-filos%C3%B3fico-Voltaire/dp/8446022830" target="_blank" rel="noopener noreferrer">Amazon España</a></li>
                     </ul>
                 </li>
-                <li><strong>Historia:</strong>
+                <li><strong>Zadig o el Destino</strong> (1747)
                     <ul>
-                        <li><a href="https://es.wikipedia.org/wiki/Ensayo_sobre_las_costumbres_y_el_esp%C3%ADritu_de_las_naciones" target="_blank" rel="noopener noreferrer">Ensayo sobre las costumbres y el espíritu de las naciones</a> (1756) - Una de las primeras historias universales que rompió con la visión teocéntrica.</li>
+                        <li><a href="https://www.gutenberg.org/ebooks/19941" target="_blank" rel="noopener noreferrer">Project Gutenberg (español, junto con Micromegas)</a></li>
+                        <li><a href="https://archive.org/details/zadigeldesitinof00volt" target="_blank" rel="noopener noreferrer">Archive.org (español)</a></li>
+                        <li><a href="https://www.amazon.es/Zadig-micromegas-Catedra-Letras-Universales/dp/8437609278" target="_blank" rel="noopener noreferrer">Amazon España</a></li>
+                    </ul>
+                </li>
+                <li><strong>Micromegas</strong> (1752)
+                    <ul>
+                        <li><a href="https://www.gutenberg.org/ebooks/19941" target="_blank" rel="noopener noreferrer">Project Gutenberg (español, junto con Zadig)</a></li>
+                        <li><a href="https://archive.org/details/zadigeldesitinof00volt" target="_blank" rel="noopener noreferrer">Archive.org (español, junto con Zadig)</a></li>
+                        <li><a href="https://www.amazon.es/Zadig-micromegas-Catedra-Letras-Universales/dp/8437609278" target="_blank" rel="noopener noreferrer">Amazon España</a></li>
+                    </ul>
+                </li>
+                <li><strong>Ensayo sobre las costumbres y el espíritu de las naciones</strong> (1756)
+                    <ul>
+                        <li><a href="https://es.wikipedia.org/wiki/Ensayo_sobre_las_costumbres_y_el_esp%C3%ADritu_de_las_naciones" target="_blank" rel="noopener noreferrer">Wikipedia (Información)</a></li>
+                        <li><a href="https://www.amazon.es/Ensayo-sobre-costumbres-esp%C3%ADritu-naciones/dp/8437609278" target="_blank" rel="noopener noreferrer">Amazon España (Ejemplo, puede no ser la edición específica)</a></li>
                     </ul>
                 </li>
             </ul>
@@ -366,25 +364,18 @@
 
         <section id="academia-edu">
             <h2>Artículos en Academia.edu</h2>
-            <p>Aquí tienes algunas referencias a artículos sobre Voltaire que podrías encontrar en Academia.edu. Ten en cuenta que el acceso a algunos artículos puede requerir una cuenta o ser limitado.</p>
+            <p>Puedes encontrar una amplia variedad de artículos académicos sobre Voltaire en Academia.edu. Te recomiendo usar la función de búsqueda de la plataforma para refinar tus resultados.</p>
             <ul class="links-list">
                 <li><a href="https://www.academia.edu/search?q=Voltaire" target="_blank" rel="noopener noreferrer">Búsqueda general sobre "Voltaire" en Academia.edu</a></li>
-                <li>Puedes buscar directamente títulos o autores específicos relacionados con Voltaire. Por ejemplo:
+                <li><strong>Ejemplos de búsquedas más específicas:</strong>
                     <ul>
-                        <li>"Voltaire y la tolerancia"</li>
-                        <li>"El deísmo de Voltaire"</li>
-                        <li>"Cándido: una sátira del optimismo"</li>
-                        <li>Artículos de autores como "Roger Pearson" o "Nicholas Cronk" (especialistas en Voltaire).</li>
-                    </ul>
-                </li>
-                <li><strong>Ejemplo de búsqueda más específica (los resultados pueden variar):</strong>
-                    <ul>
-                        <li><a href="https://www.academia.edu/search?q=Voltaire%20C%C3%A1ndido" target="_blank" rel="noopener noreferrer">Artículos sobre "Voltaire Cándido"</a></li>
+                        <li><a href="https://www.academia.edu/search?q=Voltaire%20ilustraci%C3%B3n" target="_blank" rel="noopener noreferrer">Artículos sobre "Voltaire Ilustración"</a></li>
                         <li><a href="https://www.academia.edu/search?q=Voltaire%20tolerancia" target="_blank" rel="noopener noreferrer">Artículos sobre "Voltaire tolerancia"</a></li>
+                        <li><a href="https://www.academia.edu/search?q=Voltaire%20C%C3%A1ndido" target="_blank" rel="noopener noreferrer">Artículos sobre "Voltaire Cándido"</a></li>
                     </ul>
                 </li>
             </ul>
-            <p><strong>Nota:</strong> Para encontrar artículos específicos y de alta calidad, te recomiendo usar la función de búsqueda de Academia.edu con palabras clave precisas o navegar por los perfiles de académicos especializados en literatura y filosofía del siglo XVIII.</p>
+            <p><strong>Consejo:</strong> Usa palabras clave precisas y busca perfiles de especialistas en literatura y filosofía del siglo XVIII para encontrar las investigaciones más relevantes.</p>
         </section>
 
         <section id="fuentes">
